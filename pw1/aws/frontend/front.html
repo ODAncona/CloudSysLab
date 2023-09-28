@@ -17,7 +17,7 @@
     <script>
         document.getElementById("requeteButton").addEventListener("click", function () {
             // Effectuer la requête GET de l'image
-            fetch("https://exemple.com/votre-image.jpg")
+            fetch("http://13.48.130.177/getImage")
                 .then(function (response) {
                     if (!response.ok) {
                         throw new Error("La requête a échoué.");
