@@ -1,0 +1,8 @@
+server {
+       # configuration of HTTP virtual server 1        
+       location / {
+               root /var/www/html;
+               index index.html;
+       }
+}
+

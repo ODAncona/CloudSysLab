@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afficher une image depuis une requête HTTP GET</title>
+</head>
+<body>
+    <h1>Afficher une image depuis une requête HTTP GET</h1>
+    <p>Cliquez sur le bouton ci-dessous pour afficher une image depuis une requête HTTP GET :</p>
+
+    <button id="requeteButton">Afficher l'image</button>
+
+    <p>Image :</p>
+    <img id="image" src="" alt="Image">
+
+    <script>
+        document.getElementById("requeteButton").addEventListener("click", function () {
+            // Effectuer la requête GET de l'image
+            fetch("https://exemple.com/votre-image.jpg")
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("La requête a échoué.");
+                    }
+                    return response.blob();
+                })
+                .then(function (imageBlob) {
+                    // Convertir le Blob en URL d'image
+                    var imageUrl = URL.createObjectURL(imageBlob);
+                    // Afficher l'image
+                    document.getElementById("image").src = imageUrl;
+                })
+                .catch(function (error) {
+                    // La requête a échoué, afficher un message d'erreur
+                    alert("Erreur : " + error.message);
+                });
+        });
+    </script>
+</body>
+</html>
