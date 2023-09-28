@@ -4,11 +4,9 @@ const request = require('request');
 const app = express();
 const port = 80;
 
-app.get('/getImage', (req, res) => {
-  
-  
+app.get('/getImage', (req, res) => { 
   // Fetch image from object storage and pipe to response
-  res.sendFile('/home/ubuntu/CloudSysLab/pw1/aws/backend');
+  res.sendFile('/home/ubuntu/CloudSysLab/pw1/aws/backend/image.jpg');
 });
 
 app.listen(port, () => {
