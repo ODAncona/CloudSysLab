@@ -6,7 +6,7 @@ sudo apt-get upgrade
 sudo apt-get install git npm -y
 git clone https://github.com/ODAncona/CloudSysLab.git
 cd CloudSysLab/pw1/backend
-npm i
+npm ci
 sudo node index.js
 ```
 
